@@ -3,20 +3,74 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Example of Bootstrap 3 Headings with Secondary Text</title>
+<title>Naisargi Desai</title>
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<style type="text/css">
-    .bs-example{
-    	margin: 20px;
-    }
-</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet">
+         
+	<script>
+   
+<!----- JQUERY FOR SLIDING NAVIGATION --->
+
+$(document).ready(function() {
+  $('a[href*=#]').each(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname
+    && this.hash.replace(/#/,'') ) {
+      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+       if ($target) {
+         var targetOffset = $target.offset().top;
+
+<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
+         $(this).click(function() {
+            $(".nav li a").removeClass("active");
+            $(this).addClass('active');
+           $('html, body').animate({scrollTop: targetOffset}, 1000);
+           return false;
+         });
+      }
+    }
+  });
+
+});
+
+
+</script>
 </head>
 <body>
+
 <div class="bs-example">
     <h1>Naisargi Desai<small>Front-End Developer</small></h1>
     </div>
+    <div>
+                    <a href="https://www.facebook.com/HackUWIN2014"><img src="./HackUWIN_files/fb.png" id="fb" width="3%" height="6%"></a>
+                    <a href="https://twitter.com/HackUWIN"><img src="./HackUWIN_files/twitter.png" id="twitter" width="3%" height="5%"></a>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="http://portfolio.desai112.myweb.cs.uwindsor.ca/index.html#home" class="">Home</a></li>
+                            <li><a href="http://portfolio.desai112.myweb.cs.uwindsor.ca/index.html#portfolio">portfolio</a></li>
+                            
+                            <li><a href="http://portfolio.desai112.myweb.cs.uwindsor.ca/index.html#skills">Skills</a></li>
+                            <li><a href="http://portfolio.desai112.myweb.cs.uwindsor.ca/index.html#contact">Contact Us</a></li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+                <div id="home">
+                	
+                </div>
+                <div id="portfolio"> </div>
+                <div id="skills"> </div>
+                <div id="contact"> </div>
 </body>
 </html>  
